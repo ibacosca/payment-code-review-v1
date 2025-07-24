@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Process Refund{% endblock %}
+
+{% block body %}
+    <h1>Process Refund</h1>
+
+    {{ form_start(refundForm) }}
+        <div class="mb-3">
+            {{ form_label(refundForm.transactionId) }}
+            {{ form_widget(refundForm.transactionId, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(refundForm.transactionId) }}
+        </div>
+        <div class="mb-3">
+            {{ form_label(refundForm.refundAmount) }}
+            {{ form_widget(refundForm.refundAmount, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(refundForm.refundAmount) }}
+        </div>
+    {{ form_end(refundForm) }}
+{% endblock %}

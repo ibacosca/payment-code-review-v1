@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Complete Payment{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Step 2: Enter Payment Information</h3>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4">Amount to pay: <strong>${{ amount|number_format(2) }}</strong></p>
+                    
+                    {{ form_start(step2Form) }}
+                        <div class="mb-3">
+                            {{ form_label(step2Form['billing-cc-number']) }}
+                            {{ form_widget(step2Form['billing-cc-number']) }}
+                            {{ form_errors(step2Form['billing-cc-number']) }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form_label(step2Form['billing-cc-exp']) }}
+                            {{ form_widget(step2Form['billing-cc-exp']) }}
+                            {{ form_errors(step2Form['billing-cc-exp']) }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form_label(step2Form.cvv) }}
+                            {{ form_widget(step2Form.cvv) }}
+                            {{ form_errors(step2Form.cvv) }}
+                        </div>
+                        
+                        <div class="d-flex gap-2">
+                            {{ form_widget(step2Form.submit) }}
+                            <a href="{{ path('app_checkout') }}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    {{ form_end(step2Form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

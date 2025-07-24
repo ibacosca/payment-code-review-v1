@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: Transaction API
+  version: 1.0.0
+  description: API for managing transactions
+paths:
+    /api/transactions:
+        get:
+            summary: List all transactions
+            responses:
+                '200':
+                    description: A list of transactions
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    type: object
+                                    properties:
+                                        uuid:
+                                            type: string
+                                        transaction_id:
+                                            type: string
+                                        amount:
+                                            type: number
+                                            format: float
+                                        currency:
+                                            type: string
+                                        payment_status:
+                                            type: string
+                                            enum: [approved, refunded, failed]
+                                        last4_digits:
+                                            type: string
+                                        created_at:
+                                            type: string
+                                            format: date-time
+                                            example: '2023-10-01T12:00:00Z'
