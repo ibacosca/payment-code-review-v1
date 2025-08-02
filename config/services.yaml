@@ -20,3 +20,12 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Payment\Infrastructure\Persistence\Doctrine\Repository\DoctrinePaymentTransactionRepository:
+        tags: ['doctrine.repository_service']
+
+    App\Payment\Domain\Repository\PaymentTransactionRepositoryInterface:
+        alias: App\Payment\Infrastructure\Persistence\Doctrine\Repository\DoctrinePaymentTransactionRepository
+
+    App\Payment\Domain\Service\PaymentGatewayInterface:
+        alias: App\Payment\Infrastructure\Gateway\NmiPaymentGateway

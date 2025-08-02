@@ -1,5 +1,5 @@
 controllers:
     resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+        path: ../src/Payment/UserInterface/Controller/
+        namespace: App\Payment\UserInterface\Controller
     type: attribute
