@@ -19,6 +19,11 @@
                     {{ form_widget(checkoutForm.currency, {'attr': {'class': 'form-control'}}) }}
                     {{ form_errors(checkoutForm.currency) }}
                 </div>
+                <div class="mb-3 form-check">
+                    {{ form_widget(checkoutForm.isSubscription, {'attr': {'class': 'form-check-input'}}) }}
+                    {{ form_label(checkoutForm.isSubscription, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                    {{ form_errors(checkoutForm.isSubscription) }}
+                </div>
             </div>
             
             <div class="col-md-6">

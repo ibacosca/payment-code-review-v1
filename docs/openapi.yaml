@@ -4,6 +4,20 @@ info:
   version: 1.0.0
   description: API for managing transactions
 paths:
+    /api/subscriptions/rebill:
+        post:
+            summary: Trigger the rebilling process for all due subscriptions
+            responses:
+                '200':
+                    description: The rebilling process was successfully started
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    message:
+                                        type: string
+                                        example: 'Subscription rebilling process started.'
     /api/transactions:
         get:
             summary: List all transactions

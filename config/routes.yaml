@@ -1,5 +1,12 @@
-controllers:
+controllers_web:
     resource:
-        path: ../src/Payment/UserInterface/Controller/
-        namespace: App\Payment\UserInterface\Controller
+        path: ../src/Infrastructure/Http/Web/
+        namespace: App\Infrastructure\Http\Web
     type: attribute
+
+controllers_api:
+    resource:
+        path: ../src/Infrastructure/Http/Api/
+        namespace: App\Infrastructure\Http\Api
+    type: attribute
+    prefix: /api
